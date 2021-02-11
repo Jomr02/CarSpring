@@ -27,4 +27,4 @@ Plataforma de compra-venta de vehiculos
 | **Nombre**  | **Correo**  | **Github**  | 
 |---|---|---|
 | José Moreno Ruiz  | j.morenoru.2018@alumnos.urjc.es   | https://github.com/Jomr02  |  
-|  Sergio Martín Vaquero |  s.martinvaq@alumnos.urjc.es |  |
+|  Sergio Martín Vaquero |  s.martinvaq@alumnos.urjc.es | https://github.com/srgmrtnvqr |
