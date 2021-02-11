@@ -10,3 +10,21 @@ Plataforma de compra-venta de vehiculos
 ## Servicio interno
 - **Alertas por correo electrónico:** Recibir correo electrónico cuando uno de tus vehiculos ha sido comprado.
 
+## Funcionalidades
+### Funcionalidades públicas
+- Hacer una búsqueda de un cierto vehiculo utilizando filtros.
+- Recorrer una lista de artículos publicados mediante un tablón. 
+
+### Funcionalidades privadas
+- Efectuar una compra de un vehiculo.
+- Editar un perfil propio con información personal como la ciudad, teléfono de contacto etc
+- Ver el perfil de otros usuarios, sus vehiculos en venta y las valoraciones emitidas por otros usuarios.
+- Publicar un anuncio de venta.
+
+
+
+# Equipo de desarrollo
+| **Nombre**  | **Correo**  | **Github**  | 
+|---|---|---|
+| José Moreno Ruiz  | j.morenoru.2018@alumnos.urjc.es   | https://github.com/Jomr02  |  
+|  Sergio Martín Vaquero |  s.martinvaq@alumnos.urjc.es |  |
