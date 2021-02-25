@@ -1,8 +1,5 @@
 package es.urjc.etsii.dad.CarSpring;
 
-import java.text.SimpleDateFormat;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,19 +11,50 @@ public class Articulo {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	private String foto = "";
-	private String categoria = "";
+	private String nombre;
+	private String categoria;
 	private boolean publico = true;
-	private int anoFabricacion = 0;
-	//private int kilometros;
+	private int anoFabricacion;//Solo el año
 	
 	public Articulo() {
 		
 	}
 	
+	public Articulo(String nombre) {
+		super();
+		this.nombre = nombre;
+		this.categoria = "";
+	}
+	
+	public Articulo(String nombre, int anoFabricacion) {
+		this.nombre = nombre;
+		this.categoria = "";
+		if(anoFabricacion > 0) {
+			this.anoFabricacion = anoFabricacion;
+		} else this.anoFabricacion = 0;
+	}
+	
+	public Articulo(String nombre, String categoria, int anoFabricacion) {
+		super();
+		this.nombre = nombre;
+		this.categoria = categoria;
+		if(anoFabricacion > 0) {
+			this.anoFabricacion = anoFabricacion;
+		} else this.anoFabricacion = 0;
+	}
+	
+	public Articulo(String nombre, String categoria, boolean publico) {
+		super();
+		this.nombre = nombre;
+		this.categoria = categoria;
+		this.publico = publico;
+//		this.anoFabricacion = 0;
+	}
+			
+			
 	public Articulo(String foto, String categoria, boolean publico, int anoFabricacion) {
 		super();
-		this.foto = foto;
+		this.nombre = foto;
 		this.categoria = categoria;
 		this.publico = publico;
 		if(anoFabricacion > 0) {
@@ -39,8 +67,8 @@ public class Articulo {
 		return id;
 	}
 
-	public String getFoto() {
-		return foto;
+	public String getNombre() {
+		return nombre;
 	}
 
 	public String getCategoria() {
@@ -60,7 +88,7 @@ public class Articulo {
 	}
 
 	public void setFoto(String foto) {
-		this.foto = foto;
+		this.nombre = foto;
 	}
 
 	public void setCategoria(String categoria) {
@@ -77,7 +105,7 @@ public class Articulo {
 
 	@Override
 	public String toString() {
-		return "Articulo [id=" + id + ", foto=" + foto + ", categoria=" + categoria + ", publico=" + publico
+		return "Articulo [id=" + id + ", foto=" + nombre + ", categoria=" + categoria + ", publico=" + publico
 				+ ", anoFabricacion=" + anoFabricacion + "]";
 	}
 	
