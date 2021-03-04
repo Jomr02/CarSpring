@@ -15,6 +15,7 @@ public class Articulo {
 	private String categoria;
 	private boolean publico = true;
 	private int anoFabricacion;//Solo el año
+	private int kilometros;
 	
 	public Articulo() {
 		
@@ -52,7 +53,29 @@ public class Articulo {
 	}
 			
 			
-	public Articulo(String foto, String categoria, boolean publico, int anoFabricacion) {
+	public Articulo(String nombre, String categoria, boolean publico, int anoFabricacion) {
+		super();
+		this.nombre = nombre;
+		this.categoria = categoria;
+		this.publico = publico;
+		if(anoFabricacion > 0) {
+			this.anoFabricacion = anoFabricacion;
+		}
+		else this.anoFabricacion = 0;
+	}
+	
+	public Articulo(String foto, String categoria, int anoFabricacion, int kilometros) {
+		super();
+		this.nombre = foto;
+		this.categoria = categoria;
+		if(anoFabricacion > 0) {
+			this.anoFabricacion = anoFabricacion;
+		}
+		else this.anoFabricacion = 0;
+		this.kilometros = kilometros;
+	}
+	
+	public Articulo(String foto, String categoria, boolean publico, int anoFabricacion, int kilometros) {
 		super();
 		this.nombre = foto;
 		this.categoria = categoria;
@@ -61,13 +84,18 @@ public class Articulo {
 			this.anoFabricacion = anoFabricacion;
 		}
 		else this.anoFabricacion = 0;
+		this.kilometros = kilometros;
+	}
+
+	public String getNombre() {
+		return nombre;
 	}
 
 	public long getId() {
 		return id;
 	}
 
-	public String getNombre() {
+	public String getFoto() {
 		return nombre;
 	}
 

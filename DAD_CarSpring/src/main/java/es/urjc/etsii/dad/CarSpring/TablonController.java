@@ -47,10 +47,10 @@ public class TablonController {
 	}
 
 	@PostMapping("/anuncio/nuevo")
-	public String nuevoAnuncio(Model model, @RequestParam String nombre, @RequestParam int precio, @RequestParam(required=false) String categoria, @RequestParam(defaultValue="0") int anoFabricacion, @RequestParam String comentario) {
+	public String nuevoAnuncio(Model model, @RequestParam String nombre, @RequestParam int precio, @RequestParam(required=false) String categoria, @RequestParam(defaultValue="0") int anoFabricacion, @RequestParam String comentario, @RequestParam(defaultValue="0") int kilometros, @RequestParam String nombreUser) {
 		
-		Anuncio anuncio = new Anuncio(new Articulo(nombre, categoria, anoFabricacion), comentario, precio);
-		Usuario user = usRepo.findByNick("Admin");
+		Anuncio anuncio = new Anuncio(new Articulo(nombre, categoria, anoFabricacion, kilometros), comentario, precio);
+		Usuario user = usRepo.findByNick(nombreUser);
 		user.addAnuncio(anuncio);
 		adRepo.save(anuncio);
 		usRepo.save(user);
@@ -84,7 +84,9 @@ public class TablonController {
 		Optional<Anuncio> op = adRepo.findById(id);
 		if(op.isPresent()) {
 			Anuncio ad = op.get();
-			ad.getUsuario().borrarAnuncio(ad);
+			Usuario user = ad.getUsuario();
+			user.borrarArticulo(ad.getArticulo());
+			user.borrarAnuncio(ad);
 			adRepo.deleteById(id);
 		}
 		model.addAttribute("anuncios", adRepo.findAll(page));

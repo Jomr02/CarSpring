@@ -22,8 +22,6 @@ public class Anuncio {
 	private Articulo articulo;
 	@ManyToOne
 	private Usuario user;
-	@OneToOne
-	private Pedido pedido;
 
 	public Anuncio() {}
 	
@@ -53,10 +51,6 @@ public class Anuncio {
 		return precio;
 	}
 
-	public Usuario getUser() {
-		return user;
-	}
-
 	public Usuario getUsuario() {
 		return this.user;
 	}
@@ -65,14 +59,6 @@ public class Anuncio {
 		return this.articulo;
 	}
 	
-	public Pedido getPedido() {
-		return pedido;
-	}
-
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
-	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -93,15 +79,12 @@ public class Anuncio {
 		this.articulo = art;
 	}
 	
-	public void addPedido(Pedido p)
-	{
-		this.pedido = p;
-	}
-
 	@Override
 	public String toString() {
-		return "Anuncio [articulo=" + articulo.getNombre() + ", vendedor=" + user.getNick() + ", comentario=" + comentario + ", pedido=" + pedido + "]";
+		return "Anuncio [id=" + id + ", comentario=" + comentario + ", precio=" + precio + ", articulo=" + articulo
+				+ ", user=" + user + "]";
 	}
+
 
 
 }

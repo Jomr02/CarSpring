@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 
@@ -15,7 +16,7 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@OneToOne
+	@ManyToOne
 	private Usuario user;
 	
 	@OneToOne

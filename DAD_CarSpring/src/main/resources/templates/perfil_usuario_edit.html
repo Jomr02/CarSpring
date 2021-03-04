@@ -28,7 +28,7 @@
 		</div>
 	</nav>
 	<br>
-	<p align="center">Nick: {{usuario.nick}}</p>
+	<p align="center">Nombre: {{usuario.nick}}</p>
 	<form align = center action="/usuario/{{usuario.id}}/guardar" method="post">
 		<p>Modificar contraseña: <input type='text' name='contrasena' value={{usuario.contrasena}}><br> </p>
 		<p>Modificar información del perfil: <textarea name='comentario' rows=5 cols=40>{{usuario.info_perfil}}</textarea></p>
