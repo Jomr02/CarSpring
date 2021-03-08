@@ -25,7 +25,7 @@ Plataforma de compra-venta de vehiculos
 <kbd>![](Imagenes/diagramaUML.png)</kbd>
 
 ## Diagrama Entidad-Relación
-<kbd>![](Imagenes/DiagramaEntidad-Relacion.png)</kbd>
+<kbd>![](Imagenes/Diagrama Entidad-Relacion.png)</kbd>
 
 ## Capturas de pantalla
 
