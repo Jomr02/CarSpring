@@ -21,6 +21,44 @@ Plataforma de compra-venta de vehiculos
 - Ver el perfil de otros usuarios, sus vehiculos en venta y las valoraciones emitidas por otros usuarios.
 - Publicar un anuncio de venta.
 
+## Diagrama UML
+<kbd>![](Imagenes/diagramaUML.PNG)</kbd>
+
+## Diagrama Entidad-Relación
+<kbd>![](Imagenes/DiagramaEntidad-Relacion.PNG)</kbd>
+
+## Capturas de pantalla
+
+
+**Inicio**
+<kbd>![](Imagenes/Inicio.PNG)</kbd>
+
+**Registro**
+<kbd>![](Imagenes/Registro.PNG)</kbd>
+
+**Usuario guardado**
+<kbd>![](Imagenes/UsuarioGuardado.PNG)</kbd>
+
+**Inicio sesión**
+<kbd>![](Imagenes/InicioSesion.PNG)</kbd>
+
+**Tablón de anuncios**
+<kbd>![](Imagenes/Tablon.PNG)</kbd>
+
+**Anuncio guardado**
+<kbd>![](Imagenes/AnuncioGuardado.PNG)</kbd>
+
+**Anuncio**
+<kbd>![](IImagenes/Anuncio.PNG)</kbd>
+
+**Perfil de usuario**
+<kbd>![](Imagenes/PerfilUsuario.PNG)</kbd>
+
+**Editar usuario**
+<kbd>![](Imagenes/EditarUsuario.PNG)</kbd>
+
+
+
 
 
 # Equipo de desarrollo
