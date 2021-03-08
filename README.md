@@ -22,10 +22,10 @@ Plataforma de compra-venta de vehiculos
 - Publicar un anuncio de venta.
 
 ## Diagrama UML
-<kbd>![](Imagenes/diagramaUML.PNG)</kbd>
+<kbd>![](Imagenes/diagramaUML.png)</kbd>
 
 ## Diagrama Entidad-Relación
-<kbd>![](Imagenes/DiagramaEntidad-Relacion.PNG)</kbd>
+<kbd>![](Imagenes/DiagramaEntidad-Relacion.png)</kbd>
 
 ## Capturas de pantalla
 
