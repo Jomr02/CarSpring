@@ -17,7 +17,7 @@ public class Anuncio {
 	private String comentario;
 	private int precio;
 	
-	//@OneToOne(cascade = CascadeType.ALL)
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Articulo articulo;
 	@ManyToOne

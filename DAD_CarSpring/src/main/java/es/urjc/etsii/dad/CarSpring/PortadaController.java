@@ -2,6 +2,8 @@ package es.urjc.etsii.dad.CarSpring;
 
 import java.util.List;
 import java.util.Optional;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.annotation.PostConstruct;
 
@@ -14,9 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.*;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
+
 
 @Controller
 public class PortadaController {
@@ -26,8 +26,7 @@ public class PortadaController {
 	private UsuariosRepository userRepo;
 	@Autowired
 	private AnunciosRepository adRepo;
-	@Autowired
-	private ArticulosRepository artRepo;
+
 	
 	private Usuario userActual; //Si un usuario ha iniciado sesión
 	
