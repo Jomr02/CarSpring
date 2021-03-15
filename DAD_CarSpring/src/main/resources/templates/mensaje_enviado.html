@@ -4,7 +4,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
 </head>
-
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
 		<a class="navbar-brand" href="#">CarSpring</a>
@@ -12,8 +11,8 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-		<ul class="nav navbar-nav nav-fill">
-				<li class="nav-item">        </li>
+			<ul class="nav navbar-nav nav-fill">
+ 				<li class="nav-item">        </li>
   				<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
   				<li class="nav-item"><a class="nav-link" href="/tablon">Tablón</a></li>
 				<li class="nav-item"><a class="nav-link" href="/nuevoAnuncio.html">Nuevo Anuncio</a></li>
@@ -28,25 +27,7 @@
 		</div>
 	</nav>
 	<br>
-
-	{{#hayChat}} 
-			<h3><a href="/usuario/{{destinatario.id}}"> Chat con {{destinatario.nick}}</h3>
-			{{#mensajes}}
-			<div class="row">
-				<p>{{.cuerpo}}</p>
-			</div>
-			{{/mensajes}}
-	{{/hayChat}}
-
-	<form align = center action="mensaje/nuevo/3" method="post">
-		<p>Escribe el nombre de usuario del destinatario
-		<input type='text' name='destinatario'><br> </p>
-		<p>Escribe tu nombre de usuario
-		<input type='text' name='remitente'><br> </p>
-		<p>Cuerpo del mensaje:
-		<textarea name='cuerpo' rows=5 cols=40></textarea></p>
-
-		<input type='submit' value='Enviar'/>
-	</form>
+	<p align="center">Mensaje Enviado.</p>
+	<p align="center"><a href="/tablon/?page=0&size=50" class="btn btn-success">Volver al tablón</a>
 </body>
 </html> 
