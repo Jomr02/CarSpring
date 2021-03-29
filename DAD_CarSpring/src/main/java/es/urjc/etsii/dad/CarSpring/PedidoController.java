@@ -18,11 +18,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class PedidoController {
 
 	@Autowired
-	private AnunciosRepository adRepo;
+	private AnuncioRepository adRepo;
 	@Autowired
-	private UsuariosRepository usRepo;
+	private UsuarioRepository usRepo;
 	@Autowired
-	private PedidosRepository peRepo; 
+	private PedidoRepository peRepo; 
+	
 
 	@PostConstruct
 	public void init() {

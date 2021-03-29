@@ -18,9 +18,9 @@ public class TablonController {
 	
 
 	@Autowired
-	private AnunciosRepository adRepo;
+	private AnuncioRepository adRepo;
 	@Autowired
-	private UsuariosRepository usRepo;
+	private UsuarioRepository usRepo;
 
 
 
