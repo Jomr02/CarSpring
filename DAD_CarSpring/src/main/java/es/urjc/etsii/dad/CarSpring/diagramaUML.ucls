@@ -99,17 +99,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="11" language="java" name="es.urjc.etsii.dad.CarSpring.PedidoRepository" project="DAD_CarSpring" 
-    file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/PedidoRepository.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="63" width="124" x="1117" y="405"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="false" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="12" language="java" name="es.urjc.etsii.dad.CarSpring.PortadaController" project="DAD_CarSpring" 
+  <class id="11" language="java" name="es.urjc.etsii.dad.CarSpring.PortadaController" project="DAD_CarSpring" 
     file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/PortadaController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="225" width="377" x="1666" y="140"/>    
@@ -119,7 +109,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="es.urjc.etsii.dad.CarSpring.MensajeController" project="DAD_CarSpring" 
+  <class id="12" language="java" name="es.urjc.etsii.dad.CarSpring.MensajeController" project="DAD_CarSpring" 
     file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/MensajeController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="81" width="128" x="2318" y="140"/>    
@@ -129,7 +119,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="es.urjc.etsii.dad.CarSpring.Chat" project="DAD_CarSpring" 
+  <class id="13" language="java" name="es.urjc.etsii.dad.CarSpring.Chat" project="DAD_CarSpring" 
     file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/Chat.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="207" width="167" x="2123" y="832"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -138,7 +128,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="es.urjc.etsii.dad.CarSpring.AnuncioVenta" project="DAD_CarSpring" 
+  <class id="14" language="java" name="es.urjc.etsii.dad.CarSpring.AnuncioVenta" project="DAD_CarSpring" 
     file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/AnuncioVenta.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="189" width="192" x="892" y="140"/>    
@@ -148,7 +138,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="es.urjc.etsii.dad.CarSpring.Mensaje" project="DAD_CarSpring" 
+  <class id="15" language="java" name="es.urjc.etsii.dad.CarSpring.Mensaje" project="DAD_CarSpring" 
     file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/Mensaje.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="171" width="191" x="2228" y="1097"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -157,7 +147,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="es.urjc.etsii.dad.CarSpring.Usuario" project="DAD_CarSpring" 
+  <class id="16" language="java" name="es.urjc.etsii.dad.CarSpring.Usuario" project="DAD_CarSpring" 
     file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/Usuario.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="387" width="195" x="2083" y="405"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -166,7 +156,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="es.urjc.etsii.dad.CarSpring.Articulo" project="DAD_CarSpring" 
+  <class id="17" language="java" name="es.urjc.etsii.dad.CarSpring.Articulo" project="DAD_CarSpring" 
     file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/Articulo.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="387" width="199" x="1989" y="1097"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -175,7 +165,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="19" language="java" name="es.urjc.etsii.dad.CarSpring.MensajeRepository" project="DAD_CarSpring" 
+  <interface id="18" language="java" name="es.urjc.etsii.dad.CarSpring.MensajeRepository" project="DAD_CarSpring" 
     file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/MensajeRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="63" width="133" x="1124" y="140"/>    
@@ -185,174 +175,266 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <association id="20">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="21" name="anuncios"/>      
-      <multiplicity id="22" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="23">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="24" name="pedidos"/>      
-      <multiplicity id="25" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="26">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="27" name="user"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="29">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="30" name="adRepo"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="32">    
-    <bendpoint x="2092" y="832"/>    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="33" name="articulos"/>      
-      <multiplicity id="34" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="35">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="36" name="usRepo"/>      
-      <multiplicity id="37" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="38">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="39" name="user"/>      
-      <multiplicity id="40" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="41">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="42" name="articulo"/>      
-      <multiplicity id="43" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="44">    
+  <interface id="19" language="java" name="es.urjc.etsii.dad.CarSpring.PedidosRepository" project="DAD_CarSpring" 
+    file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/PedidosRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="63" width="131" x="388" y="405"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="20" language="java" name="es.urjc.etsii.dad.CarSpring.PedidoController" project="DAD_CarSpring" 
+    file="/DAD_CarSpring/src/main/java/es/urjc/etsii/dad/CarSpring/PedidoController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="145" x="388" y="248"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="21">    
     <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="45" name="userRepo"/>      
-      <multiplicity id="46" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="47">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="48" name="mensajes"/>      
-      <multiplicity id="49" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="50">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="51" name="c1"/>      
-      <multiplicity id="52" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="53">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="54" name="remitente"/>      
-      <multiplicity id="55" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="56">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="57" name="artRepo"/>      
-      <multiplicity id="58" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="59">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="60" name="pRepo"/>      
-      <multiplicity id="61" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="62">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="63" name="destinatario"/>      
-      <multiplicity id="64" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="65">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="66" name="artRepo"/>      
-      <multiplicity id="67" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="68">    
-    <bendpoint x="2052" y="405"/>    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="69" name="anuncio"/>      
-      <multiplicity id="70" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="71">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="72" name="c2"/>      
-      <multiplicity id="73" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="74">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="75" name="msgRepo"/>      
-      <multiplicity id="76" minimum="0" maximum="1"/>    
+      <attribute id="22" name="msgRepo">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="23" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="77">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="78" name="adRepo"/>      
-      <multiplicity id="79" minimum="0" maximum="1"/>    
+  <association id="24">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="25" name="userRepo">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="26" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="27">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="28" name="adRepo"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="80">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="81" name="userActual"/>      
-      <multiplicity id="82" minimum="0" maximum="1"/>    
+  <association id="30">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="31" name="adRepo">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="32" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="33">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="34" name="pedidos">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="35" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="36">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="37" name="anuncios">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="38" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="39">    
+    <bendpoint x="2052" y="405"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="40" name="anuncio">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="41" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="42">    
+    <bendpoint x="2092" y="832"/>    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="43" name="articulos">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="44" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="45">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="46" name="remitente">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="49" name="peRepo"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="51">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="52" name="mensajes">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="53" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="54">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="55" name="usRepo"/>      
+      <multiplicity id="56" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="57">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="58" name="userActual">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="59" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="60">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="61" name="destinatario">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="62" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="63">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="64" name="user">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="65" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="66">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="67" name="usRepo">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="68" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="69">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="70" name="adRepo">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="71" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="72">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="73" name="c1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="74" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="75">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="76" name="c2">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="77" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="78">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="79" name="articulo">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="80" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="81">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="82" name="user">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="83" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
