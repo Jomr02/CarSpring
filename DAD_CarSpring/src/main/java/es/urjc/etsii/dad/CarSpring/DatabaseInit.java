@@ -14,33 +14,29 @@ public class DatabaseInit {
 	private UsuarioRepository userRepo;
 	@Autowired
 	private AnuncioRepository adRepo;
+	@Autowired
+	private ArticuloRepository artRepo;
 
 	@PostConstruct
 	public void init () {
-/*		
+
 		////////// INICIALIZAR USUARIOS
-		userRepo.save(new Usuario("Chema", "essolodeprueba", "Clarinetista en la orquesta RTVE"));
-		userRepo.save(new Usuario("Cassi", "essolodeprueba2", "Luthier de zanfonas"));
-		userRepo.save(new Usuario("Admin", "admin", "Administrador de la página web"));
-		Usuario u1 = new Usuario ("Green", "quenoquieroponeruna", "Tienda de música");
+		Usuario u1 = new Usuario("admin", "admin", "Administrador de la página web", "ROLE_USER", "ROLE_ADMIN");
 		userRepo.save(u1);
-		Usuario u2 = new Usuario ("Cthulhu", "cthulhu", "Aprendiendo a tocar la guitarra");
+		Usuario u2 = new Usuario ("pepe", "pepe", "hola soy pepe");
 		userRepo.save(u2);
 		
 		
 		
 		
 		////////// INICIALIZAR ARTICULOS, ANUNCIOS Y PEDIDOS
-		Anuncio v1 = new Anuncio(new Articulo("Ampli de bajo", "Amplificadores", 2005), "Es de válvulas.", 50);
+		Anuncio v1 = new Anuncio(new Articulo("Opel Kadett", "Coche", 1990, 204843), "Vendo coche barato", 3000);
 		u1.addAnuncio(v1);
 		adRepo.save(v1);
 		userRepo.save(u1);
 		
-		Anuncio v2 = new Anuncio(new Articulo("Guitarra Ibanez", "Guitarras", 1997), "No está bien conservada, la tienes que arreglar.", 800);
-		u2.addAnuncio(v2);
-		adRepo.save(v2);
-		userRepo.save(u2);
 		
+		/*
 		// Añadimos anuncios en bucle
 		for(int i = 1; i<=10; i++){
 			//adRepo.save(new AnuncioVenta("User "+i, "Anuncio "+i, "Contenido "+i, new Articulo("asd", "asd", true, 0), i*10 ));
@@ -50,12 +46,13 @@ public class DatabaseInit {
 			ui.addAnuncio(vi);
 			adRepo.save(vi);
 			userRepo.save(ui);
-		}	
+		}	*/
+	
 		//pRepo.save(new Pedido(u1,v1));
 		//pRepo.save(new Pedido(u2,v2));
 		
 		
-*/	
+
 		////////// INICIALIZAR MENSAJES Y CHATS
 
 		/* 		///// USUARIOS PARA PRUEBA CHATS

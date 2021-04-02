@@ -30,23 +30,6 @@ public class ChatController {
 	@PostConstruct
 	public void init () {
 
-		
-		Usuario u1 = new Usuario ("chema", "chema", "Hola, soy Chema");
-		userRepo.save(u1);
-		Usuario u2 = new Usuario ("jorge", "jorge", "Hola, soy Jorge");
-		userRepo.save(u2);
-		Chat c1 = new Chat(u1,u2); //u1 es remitente, u2 es destinatario
-		Chat c2 = new Chat(u2,u1); 
-		chtRepo.save(c1);
-		chtRepo.save(c2);
-
-		Mensaje m1 = new Mensaje ("Prueba de que hay mensajes dentro del chat");
-		Mensaje m2 = new Mensaje ("Prueba de que hay una contestación");
-		c1.addMensaje(m1);
-		c2.addMensaje(m2);
-		chtRepo.save(c1); 
-		chtRepo.save(c2); 
-
 	}
 
 	@GetMapping("/bandeja_entrada")

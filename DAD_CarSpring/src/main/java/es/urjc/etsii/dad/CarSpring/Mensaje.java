@@ -30,6 +30,7 @@ public class Mensaje {
 		return cuerpo;
 	}
 
+	
 
 	public long getId() {
 		return id;

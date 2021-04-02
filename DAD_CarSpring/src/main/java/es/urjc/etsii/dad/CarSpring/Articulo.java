@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+
 
 @Entity
 public class Articulo {
@@ -16,15 +20,17 @@ public class Articulo {
 	private boolean publico = true;
 	private int anoFabricacion;//Solo el año
 	private int kilometros;
+	private String urlFoto;
 	
 	public Articulo() {
 		
 	}
 	
 	public Articulo(String nombre) {
-		super();
+
 		this.nombre = nombre;
 		this.categoria = "";
+		this.urlFoto = "imagenprueba.jpg";
 	}
 	
 	public Articulo(String nombre, int anoFabricacion) {
@@ -33,6 +39,7 @@ public class Articulo {
 		if(anoFabricacion > 0) {
 			this.anoFabricacion = anoFabricacion;
 		} else this.anoFabricacion = 0;
+		this.urlFoto = "imagenprueba.jpg";
 	}
 	
 	public Articulo(String nombre, String categoria, int anoFabricacion) {
@@ -42,6 +49,7 @@ public class Articulo {
 		if(anoFabricacion > 0) {
 			this.anoFabricacion = anoFabricacion;
 		} else this.anoFabricacion = 0;
+		this.urlFoto = "imagenprueba.jpg";
 	}
 	
 	public Articulo(String nombre, String categoria, boolean publico) {
@@ -49,7 +57,8 @@ public class Articulo {
 		this.nombre = nombre;
 		this.categoria = categoria;
 		this.publico = publico;
-//		this.anoFabricacion = 0;
+		this.anoFabricacion = 0;
+		this.urlFoto = "imagenprueba.jpg";
 	}
 			
 			
@@ -62,22 +71,25 @@ public class Articulo {
 			this.anoFabricacion = anoFabricacion;
 		}
 		else this.anoFabricacion = 0;
+		
+		this.urlFoto = "imagenprueba.jpg";
 	}
 	
-	public Articulo(String foto, String categoria, int anoFabricacion, int kilometros) {
+	public Articulo(String nombre, String categoria, int anoFabricacion, int kilometros) {
 		super();
-		this.nombre = foto;
+		this.nombre = nombre;
 		this.categoria = categoria;
 		if(anoFabricacion > 0) {
 			this.anoFabricacion = anoFabricacion;
 		}
 		else this.anoFabricacion = 0;
 		this.kilometros = kilometros;
+		this.urlFoto = "imagenprueba.jpg";
 	}
 	
-	public Articulo(String foto, String categoria, boolean publico, int anoFabricacion, int kilometros) {
+	public Articulo(String nombre, String categoria, boolean publico, int anoFabricacion, int kilometros) {
 		super();
-		this.nombre = foto;
+		this.nombre = nombre;
 		this.categoria = categoria;
 		this.publico = publico;
 		if(anoFabricacion > 0) {
@@ -85,6 +97,7 @@ public class Articulo {
 		}
 		else this.anoFabricacion = 0;
 		this.kilometros = kilometros;
+		this.urlFoto = "imagenprueba.jpg";
 	}
 
 	public String getNombre() {
@@ -95,9 +108,10 @@ public class Articulo {
 		return id;
 	}
 
-	public String getFoto() {
-		return nombre;
+	public String getUrlFoto() {
+		return urlFoto;
 	}
+
 
 	public String getCategoria() {
 		return categoria;
@@ -115,9 +129,14 @@ public class Articulo {
 		this.id = id;
 	}
 
-	public void setFoto(String foto) {
-		this.nombre = foto;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
+
+	public void setUrlFoto(String uri) {
+		this.urlFoto = uri;
+	}
+
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
