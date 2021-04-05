@@ -59,7 +59,7 @@ public class TablonController {
 	}
 
 	@GetMapping("/anuncio/{id}")
-	public String verAnuncio(Model model, @PathVariable long id) {
+	public String verAnuncio(Model model, @PathVariable long id, HttpServletRequest request) {
 		
 		Optional<Anuncio> op = adRepo.findById(id);
 		Anuncio anuncio;
@@ -72,20 +72,23 @@ public class TablonController {
 			if(anuncio.getArticulo().getCategoria() != "") {
 				model.addAttribute("hayCat", true);
 			}
-			model.addAttribute("anuncio", anuncio);
+			model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		}
 		return "ver_anuncio";
 	}
 	
 	@GetMapping("/borrar_anuncio/{id}")
-	public String borrarAnuncio(Model model, @PathVariable long id, Pageable page) {
+	public String borrarAnuncio(Model model, @PathVariable long id, Pageable page, HttpServletRequest request) {
+
+		Usuario usuarioActual = usRepo.findByNick(request.getUserPrincipal().getName());
+		model.addAttribute("username", usuarioActual.getNick());
 		
 		Optional<Anuncio> op = adRepo.findById(id);
 		if(op.isPresent()) {
 			Anuncio ad = op.get();
-			Usuario user = ad.getUsuario();
-			user.borrarArticulo(ad.getArticulo());
-			user.borrarAnuncio(ad);
+			Usuario propietario = ad.getAnunciante();
+			propietario.borrarArticulo(ad.getArticulo());
+			propietario.borrarAnuncio(ad);
 			adRepo.deleteById(id);
 		}
 		model.addAttribute("anuncios", adRepo.findAll(page));

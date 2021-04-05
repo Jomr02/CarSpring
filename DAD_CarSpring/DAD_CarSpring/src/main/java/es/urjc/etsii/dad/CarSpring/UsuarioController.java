@@ -1,6 +1,7 @@
 package es.urjc.etsii.dad.CarSpring;
 
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,7 +25,10 @@ public class UsuarioController {
 	
 	@Autowired
 	private UsuarioRepository userRepo;
+	@Autowired
 	private AnuncioRepository adRepo;	
+	@Autowired
+	private ArticuloRepository artRepo;
 
 	
 	@PostConstruct
@@ -70,19 +74,20 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/registerOK")
-	public String nuevoUsuario(Model model, Usuario usuario) {
-
-		userRepo.save(usuario);
+	public String nuevoUsuario(Model model, @RequestParam String nick, @RequestParam String contrasena, @RequestParam String biografia) {
+		userRepo.save(new Usuario(nick, contrasena, biografia));
+		
 		return "usuario_guardado";
 	}
 	
 	
 	@GetMapping("/usuario/{userId}")
-	public String verPerfil(Model model, @PathVariable Long userId) {
+	public String verPerfil(Model model, @PathVariable Long userId, HttpServletRequest request) {
 	
 		Optional<Usuario> op = userRepo.findById(userId);
 		if(op.isPresent()) {
 			model.addAttribute("usuario", op.get());
+			model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		}
 
 		return "perfil_usuario";
@@ -99,12 +104,12 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/usuario/{userId}/guardar")
-	public String usuarioEditGuardar(Model model, @PathVariable Long userId, @RequestParam Optional<String> contrasena, @RequestParam Optional<String> info_perfil) {
+	public String usuarioEditGuardar(Model model, @PathVariable Long userId, @RequestParam Optional<String> contrasena, @RequestParam Optional<String> bio) {
 		Optional<Usuario> op = userRepo.findById(userId);
 		if(op.isPresent()) {
 			Usuario usuario = op.get();
 			if(contrasena.isPresent()) {usuario.setContrasena(contrasena.get());}
-			if(info_perfil.isPresent()) {usuario.setBio(info_perfil.get());}
+			if(bio.isPresent()) {usuario.setBio(bio.get());}
 			userRepo.save(usuario);
 		}
 
@@ -118,12 +123,12 @@ public class UsuarioController {
 		Optional<Usuario> op = userRepo.findById(userId);
 		if(op.isPresent()) {
 			Usuario user = op.get();
-			//List<Articulo> articulos = user.getArticulos();
-			//artRepo.deleteInBatch(articulos);
-			user.borrarTodosAnuncios();
+			List<Articulo> articulos = user.getArticulos(); //Se saca la referencia a todos los articulos que aun son de este usuario
+			user.borrarTodosAnuncios();				// Borramos la referencia que tiene el usuario de sus anuncios y artículos
 			user.borrarTodosArticulos();
-			adRepo.deleteByUser_Id(userId);
-			userRepo.deleteById(userId);
+			artRepo.deleteInBatch(articulos);		// Borramos todas las instancias de sus articulos del repositorio
+			adRepo.deleteByAnunciante_Id(userId);	// Borramos todas las instancias de sus anuncios
+			userRepo.deleteById(userId);			// Borramos el usuario de su repo
 		}
 		return "usuario_borrado";
 	}
