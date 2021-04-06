@@ -1,18 +1,19 @@
 package es.urjc.etsii.dad.CarSpring;
 
-import java.util.Optional;
+import java.net.URI;
 
-import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.client.RestTemplate;
+
+
 
 @Controller
 public class PedidoController {
@@ -51,6 +52,13 @@ public class PedidoController {
 		userRepo.save(comprador);
 		model.addAttribute("userActual", comprador);
 		model.addAttribute("username", comprador.getNick());
+		
+		//Comunicación por REST
+		//String url = PARTIDOS_URL;
+		HttpEntity<Pedido> pedidoRequest= new HttpEntity<>(pedido);
+		RestTemplate.exchange(url, HttpMethod.GET,pedidoRequest,Void.class);
+	    
+	    
 		return "pedido_realizado";
 		
 	}

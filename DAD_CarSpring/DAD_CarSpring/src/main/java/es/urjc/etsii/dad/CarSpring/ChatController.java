@@ -1,9 +1,8 @@
 package es.urjc.etsii.dad.CarSpring;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
-import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,9 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import javax.servlet.http.HttpServletRequest;
 
-import antlr.collections.List;
 
 @Controller
 public class ChatController {
@@ -42,14 +39,14 @@ public class ChatController {
 		return "enviar_mensaje";
 	}
 	
-	@PostMapping("/mensaje/nuevo/")
-	public String nuevoMensaje(Model model, @RequestParam String dest, @RequestParam String asunto, @RequestParam String cuerpo,  HttpServletRequest request) {
+	@PostMapping("/mensaje/nuevo")
+	public String nuevoMensaje(Model model, @RequestParam String destinatario, @RequestParam String asunto, @RequestParam String cuerpo,  HttpServletRequest request) {
 		Usuario remitente = userRepo.findByNick(request.getUserPrincipal().getName());
-		Usuario destinatario = userRepo.findByNick(dest);
-		Mensaje mensaje = new Mensaje(remitente, destinatario, asunto, cuerpo);
+		Usuario dest = userRepo.findByNick(destinatario);
+		Mensaje mensaje = new Mensaje(remitente, dest, asunto, cuerpo);
 		msgRepo.save(mensaje);
-		destinatario.addMensaje(mensaje);
-		userRepo.save(destinatario);
+		dest.addMensaje(mensaje);
+		userRepo.save(dest);
 
 		model.addAttribute("username", request.getUserPrincipal().getName());
 		return "mensaje_enviado";
