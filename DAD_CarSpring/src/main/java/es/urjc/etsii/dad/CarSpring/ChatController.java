@@ -12,98 +12,46 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import javax.servlet.http.HttpServletRequest;
 
 import antlr.collections.List;
 
 @Controller
 public class ChatController {
-
+	
 	@Autowired
 	private MensajeRepository msgRepo;
 	@Autowired
 	private UsuarioRepository userRepo;
-	@Autowired
-	private ChatRepository chtRepo;
-
-
-
-	@PostConstruct
-	public void init () {
-
-	}
 
 	@GetMapping("/bandeja_entrada")
-	public String chatUsuarios(Model model) {
-
-		model.addAttribute("chats", chtRepo.findAll());
-
-		return "bandeja_entrada";
-	}
-
-	@GetMapping("/chat/mensajes")
-	public String tablaMensajes(Model model) {
-
-		model.addAttribute("mensaje", msgRepo.findAll());
-
-		return "mensaje_enviado";
-	}
-
-	@GetMapping("/chat/{toId}")
-	public String verChat(Model model, @PathVariable long toId) {
+	public String misMensajes(Model model, HttpServletRequest request) {
 		
+		Usuario usuarioActual = userRepo.findByNick(request.getUserPrincipal().getName());
 		
-		/*
-		//Esto va a haber que cambiarlo para buscar el remitente cuando haya inicios de sesión
-		java.util.List<Chat> listachats = chtRepo.findByDestinatario_Id(toId);
-		model.addAttribute("hayChat", false);
-		
-		model.addAttribute("destinatario", userRepo.findByNick("uPrueba1"));
-		
-		if(!listachats.isEmpty()) {
-			model.addAttribute("chat", listachats.get(0));
-			model.addAttribute("hayChat", true);
-		}
-		 */
-		return "ver_chat";
-		
+		model.addAttribute("mensaje", msgRepo.findAllByDestinatario(usuarioActual));
+		model.addAttribute("username", usuarioActual.getNick());
+		return "mensajes";
 	}
 	
-	@PostMapping("chat/mensaje/nuevo/{id}")
-	public String nuevoMensaje(Model model, @RequestParam(defaultValue="") String cuerpo, @RequestParam String destinatario, @RequestParam String remitente) {
-
-		/*
-		Optional<Chat> op = chtRepo.findById(id);
-		
-		
-		if(op.isPresent()) {
-
-			Chat chat = op.get();
-			chat.insertarMensaje(cuerpo);
-			model.addAttribute("chat", chat);
-
-		}
-		*/
-		
-		Chat c1 = new Chat(userRepo.findByNick(remitente), userRepo.findByNick(destinatario)); //u1 es remitente, u2 es destinatario
-		chtRepo.save(c1);
-
-		Mensaje m1 = new Mensaje (cuerpo);
-		c1.addMensaje(m1);
-		chtRepo.save(c1); 
-		 
-		
-		return "mensaje_enviado";
+	@GetMapping("/mensaje/{destinatarioid}")
+	public String escribirMensaje(Model model, @PathVariable long destinatarioid,  HttpServletRequest request) {
+		Usuario destinatario = userRepo.findById(destinatarioid).get();
+		model.addAttribute("destinatario", destinatario);
+		model.addAttribute("username", request.getUserPrincipal().getName());
+		return "enviar_mensaje";
 	}
+	
+	@PostMapping("/mensaje/nuevo/")
+	public String nuevoMensaje(Model model, @RequestParam String dest, @RequestParam String asunto, @RequestParam String cuerpo,  HttpServletRequest request) {
+		Usuario remitente = userRepo.findByNick(request.getUserPrincipal().getName());
+		Usuario destinatario = userRepo.findByNick(dest);
+		Mensaje mensaje = new Mensaje(remitente, destinatario, asunto, cuerpo);
+		msgRepo.save(mensaje);
+		destinatario.addMensaje(mensaje);
+		userRepo.save(destinatario);
 
-	@GetMapping("/mensaje/{id}")
-	public String verMensaje(Model model, @PathVariable long id) {
-
-		Optional<Mensaje> mesnaje = msgRepo.findById(id);
-
-		if(mesnaje.isPresent()) {
-			model.addAttribute("chat", mesnaje.get());
-		}
-
+		model.addAttribute("username", request.getUserPrincipal().getName());
 		return "mensaje_enviado";
 	}
 

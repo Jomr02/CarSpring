@@ -21,8 +21,7 @@
 	    </div>
 	    <div class="collapse navbar-collapse" id="navBar">
 	      <ul class="navbar-nav ml-auto">
-	        <li class="nav-item"><a class="nav-link" href="/login">Inicia sesión</a></li>
-	        <li class="nav-item"><a class="nav-link" href="/register">Regístrate</a></li>
+
 	        <li class="nav-item-active"><a class="nav-link" href="#"> ¡Hola, {{username}}!</a></li>
 	        <li class="nav-item">
 				<form action="/logout" method="post">
@@ -37,7 +36,7 @@
 	
 		<br>
 		<br>
-		<p align="center"><font color="#003300" size="5" face="Arial">¿Qué vehículo estás buscando?</font></p>
+		<p align="center"><font color="#003300" size="5" face="Arial">¿Qué instrumento estás buscando?</font></p>
 	
 		<div class="container">
 			<div class="row">
@@ -52,6 +51,13 @@
 							<a href="/anuncio/{{id}}" class="btn btn-primary">Ver anuncio</a>
 						</div>
 					</div>		
+				</div>
+				{{/anuncios}} 
+			</div>
+		</div>
+
+</body>
+</html>				</div>		
 				</div>
 				{{/anuncios}} 
 			</div>
