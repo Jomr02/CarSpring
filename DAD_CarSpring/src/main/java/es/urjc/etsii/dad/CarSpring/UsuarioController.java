@@ -1,12 +1,9 @@
 package es.urjc.etsii.dad.CarSpring;
 
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -89,6 +86,13 @@ public class UsuarioController {
 		return "perfil_usuario";
 	}
 	
+	@GetMapping("/zona-usuario")
+	public String zonaUsuario(Model model, HttpServletRequest request) {
+		Usuario userActual = userRepo.findByNick(request.getUserPrincipal().getName());
+		model.addAttribute("usuario", userActual);
+		return "zona_usuario";
+	}
+	
 	@GetMapping("/usuario/{userId}/edit")
 	public String usuarioEdit(Model model, @PathVariable Long userId, HttpServletRequest request) {
 		Optional<Usuario> op = userRepo.findById(userId);
@@ -143,4 +147,6 @@ public class UsuarioController {
 		model.addAttribute("username", request.getUserPrincipal().getName());
 		return "usuario_borrado";
 	}
+	
+
 }
