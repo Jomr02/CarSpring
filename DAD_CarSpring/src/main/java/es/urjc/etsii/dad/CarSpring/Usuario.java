@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ListIterator;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -14,10 +15,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.CascadeType;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 
 
 
@@ -31,55 +31,71 @@ public class Usuario {
 	
 	@Column(unique = true)
 	private String nick;
+	@Column(unique = true)
+	private String email;
 	private String contrasena; //Contraseña se va a cifrar con una función hash
 	private String biografia;
+	
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;	   //Roles que puede tener el usuario: user, admin
 	
 	@OneToMany(mappedBy="anunciante")
 	private List<Anuncio> anuncios;
+	
 	@OneToMany
 	private List<Articulo> articulos;
 	
 	@OneToMany(mappedBy="destinatario")
 	private List<Mensaje> mensajes;	
+	
 	@OneToMany(mappedBy="comprador")
 	private List<Pedido> historialPedidos; // Lista de pedidos comprados
+	
+	
 
 	
 	public Usuario () {	}
-
-	public Usuario (String nick, String contrasena, String bio) {
+	
+	public Usuario (String email, String nick, String contrasena, String bio) {
+		this.email = email;
 		this.nick = nick;
 		//Encriptacion de la contraseña; ya no se puede desencriptar nunca
 		this.contrasena = new BCryptPasswordEncoder().encode(contrasena); 
 		this.biografia = bio;
-
+		
 		this.roles = new ArrayList<>(); 
 		this.roles.add("ROLE_USER"); //Por defecto su rol es user (no es admin)
+		
+		this.anuncios = new ArrayList<Anuncio>();
+		this.articulos = new ArrayList<Articulo>();
+		this.historialPedidos = new ArrayList<Pedido>(); 
+		this.mensajes = new ArrayList<Mensaje>();
+		
+		
+	}
 
+	// Constructor sobrecargado: permite escoger el rol del usuario desde su creacion
+	public Usuario (String email, String nick, String contrasena, String bio, String ... roles) {
+		this.email = email;
+		this.nick = nick;
+		this.contrasena = new BCryptPasswordEncoder().encode(contrasena); 
+		this.biografia = bio;
+		this.roles = new ArrayList<>(Arrays.asList(roles));
+		
 		this.anuncios = new ArrayList<Anuncio>();
 		this.articulos = new ArrayList<Articulo>();
 		this.historialPedidos = new ArrayList<Pedido>(); 
 		this.mensajes = new ArrayList<Mensaje>();
 	}
-	
-	// Constructor sobrecargado: permite escoger el rol del usuario desde su creacion
-	public Usuario (String nick, String contrasena, String bio, String ... roles) {
-			this.nick = nick;
-			this.contrasena = new BCryptPasswordEncoder().encode(contrasena); 
-			this.biografia = bio;
-			this.roles = new ArrayList<>(Arrays.asList(roles));
 
-			this.anuncios = new ArrayList<Anuncio>();
-			this.articulos = new ArrayList<Articulo>();
-			this.historialPedidos = new ArrayList<Pedido>(); 
-			this.mensajes = new ArrayList<Mensaje>();
-
-		}
+	public String getEmail() {
+		return email;
+	}
 	
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	
-
 	public String getNick() {
 		return nick;
 	}
@@ -93,18 +109,15 @@ public class Usuario {
 	}
 
 	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
+		this.contrasena = new BCryptPasswordEncoder().encode(contrasena);
 	}
 
 	public String getBio() {
 		return biografia;
 	}
+
 	public void setBio(String info_perfil) {
 		this.biografia = info_perfil;
-	}
-	
-	public void addMensaje(Mensaje msg) {
-		this.mensajes.add(msg);
 	}
 	
 	public List<String> getRoles() {
@@ -114,7 +127,7 @@ public class Usuario {
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
 	}
-
+	
 	public void addRole(String role) {
 		this.roles.add(role);
 	}
@@ -139,11 +152,9 @@ public class Usuario {
 		return this.historialPedidos;
 	}
 
-
-
 	public void addPedido(Pedido pedido) {
 		this.historialPedidos.add(pedido);
-		}
+	}
 
 	public void addAnuncio(Anuncio v1) {
 		v1.setAnunciante(this);
@@ -161,14 +172,20 @@ public class Usuario {
 	public void addArticulo(Articulo art) {
 		this.articulos.add(art);
 	}
+	
+	public void addMensaje(Mensaje msg) {
+		this.mensajes.add(msg);
+	}
 
 	
 	public boolean borrarAnuncio(Anuncio ad) {
 		return this.anuncios.remove(ad);
 	}
 	
+	
 	public void borrarTodosAnuncios() {
 		ListIterator<Anuncio> iter = this.anuncios.listIterator();
+		
 		while(iter.hasNext()){
 			iter.next();
 			iter.remove();

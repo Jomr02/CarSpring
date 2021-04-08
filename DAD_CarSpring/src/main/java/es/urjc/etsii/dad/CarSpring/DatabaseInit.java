@@ -23,9 +23,7 @@ public class DatabaseInit {
 		////////// INICIALIZAR USUARIOS
 		Usuario u1 = new Usuario("admin", "admin", "Administrador de la página web", "ROLE_USER", "ROLE_ADMIN");
 		userRepo.save(u1);
-		Usuario u2 = new Usuario ("pepe", "pepe", "hola soy pepe");
-		userRepo.save(u2);
-		
+
 		
 		
 		
