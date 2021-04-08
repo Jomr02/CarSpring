@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
 
 
@@ -32,6 +35,10 @@ public class AnuncioController {
 	private UsuarioRepository usRepo;
 	@Autowired
 	private ArticuloRepository artRepo;
+	
+	private RestTemplate rest = new RestTemplate();
+	
+	private final String anuncios_link = "https://localhost:8443/anuncio/nuevo";
 	
 
 	@GetMapping("/tablon")
@@ -60,6 +67,10 @@ public class AnuncioController {
 		usuarioActual.addAnuncio(anuncio);
 		adRepo.save(anuncio);
 		
+		String url = anuncios_link;
+		HttpEntity<Anuncio> pedidoRequest= new HttpEntity<>(anuncio);
+	    rest.exchange(url, HttpMethod.POST,pedidoRequest,Void.class);
+		
 		model.addAttribute("username", request.getUserPrincipal().getName());
 		return "anuncio_guardado";
 
@@ -69,8 +80,8 @@ public class AnuncioController {
 	public String verAnuncio(Model model, @PathVariable long id, HttpServletRequest request) {
 		
 		String username = usRepo.findByNick(request.getUserPrincipal().getName()).getNick();
-		
 		Optional<Anuncio> op = adRepo.findById(id);
+		
 		Anuncio anuncio;
 		
 		if(op.isPresent()) {
