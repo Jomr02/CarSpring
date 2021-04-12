@@ -7,26 +7,28 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
-import es.urjc.etsii.dad.CarSpring.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
 //Entidad que va a simular de momento la compra
 @Entity
 public class Pedido {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-
+	
+	@JsonIgnore
 	@OneToOne
 	private Anuncio anuncio;
-
+	
+	@JsonIgnore
 	@ManyToOne
 	private Usuario comprador;
-
+	
 	public Pedido () {}
-
+	
 	public Pedido (Usuario c, Anuncio a) 
 	{
 		super ();
@@ -57,7 +59,7 @@ public class Pedido {
 	public void setAnuncio(Anuncio anuncio) {
 		this.anuncio = anuncio;
 	}
-
+	
 /*	
 	// Este método asigna un nuevo dueño al articulo. 
 	public void comprado() {
