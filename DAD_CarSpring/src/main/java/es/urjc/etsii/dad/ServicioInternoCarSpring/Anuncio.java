@@ -1,4 +1,4 @@
- package es.urjc.etsii.dad.CarSpring;
+package es.urjc.etsii.dad.ServicioInternoCarSpring;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +9,7 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import es.urjc.etsii.dad.CarSpring.*;
 
 
 @Entity
@@ -19,16 +20,13 @@ public class Anuncio {
 	private long id;
 	@JsonIgnore
 	private String comentario;
-	@JsonIgnore
 	private int precio;
 	@JsonIgnore
 	private boolean vendido;
 	
-	@JsonIgnore
 	//@OneToOne(cascade = CascadeType.ALL)
 	@OneToOne
 	private Articulo articulo;
-	@JsonIgnore
 	@ManyToOne
 	private Usuario anunciante;
 	
@@ -113,4 +111,3 @@ public class Anuncio {
 
 
 }
-

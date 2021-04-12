@@ -1,4 +1,4 @@
-package es.urjc.etsii.dad.CarSpring;
+package es.urjc.etsii.dad.ServicioInternoCarSpring;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 
 
 @Entity

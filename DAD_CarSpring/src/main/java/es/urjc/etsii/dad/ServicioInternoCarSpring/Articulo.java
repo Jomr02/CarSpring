@@ -1,4 +1,4 @@
-package es.urjc.etsii.dad.CarSpring;
+package es.urjc.etsii.dad.ServicioInternoCarSpring;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 
 
 @Entity
