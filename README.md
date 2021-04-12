@@ -30,7 +30,121 @@ Plataforma de compra-venta de vehiculos
 ## Diagrama Navegación
 <kbd>![](Imagenes/DiagramaNavegacion.PNG)</kbd>
 
-## Capturas de pantalla
+## Diagrama UML Servicio Interno
+<kbd>![](Imagenes/UMLservicioInterno.png)</kbd>
+
+# Despliegue de la máquina virtual<a name="despliegueVM"></a>
+Hemos creado la máquina virtual de tipo ubuntu/trusty32, utilizando Vagrant. Es necesario configurar la máquina virtual para que se pueda acceder a ella desde el host, a través de la red, por el puerto 8443 en la dirección 192.168.33.10.
+```
+cd /vagrant
+vagrant up
+vagrant ssh
+```
+
+### Instalación del JRE de Java 8 en la VM
+```
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt-get install openjdk-8-jre
+```
+
+### Instalación de MySQL en la VM
+Nuestro usuario es "root" con contraseña "1234"
+```
+sudo apt-get install mysql-server
+mysql -u root -p
+	mysql> CREATE DATABASE miservidor;
+exit
+```  
+  
+
+### Compilación de la aplicación
+Para que se compile y genere el .jar correctamente, es necesario especificar en el pom.xml que queremos que se haga 'repackage' en la build. Después, ejecutamos como Maven Build y escribimos "clean package" en el cuadro 'goals'.
+```
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+	    	<version>2.2.6.RELEASE</version>
+		    <executions>
+       			<execution>
+    				<goals>
+        				<goal>repackage</goal>
+       				</goals>
+       			</execution>
+   			</executions>			
+   		</plugin>
+	</plugins>
+</build>
+```
+### Ejecución
+Es necesario guardar los ficheros .jar de la web y del servicio a la carpeta compartida entre el host y la máquina virtual.
+
+Para poder ejecutar los dos .jar es necesario abrir dos terminales e iniciar la máquina virtual en ambos. Después ejecutaremos un .jar en cada uno.
+```
+vagrant up
+vagrant ssh
+cd /vagrant
+java -jar ./DAD_CarSpring-0.0.1-SNAPSHOT.jar
+```
+```
+vagrant up
+vagrant ssh
+cd /vagrant
+java -jar ./ServicioInternoCarSpring-0.0.1-SNAPSHOT.jar
+```
+__________________________
+
+## Capturas de pantalla Fase 3
+
+
+**Inicio**
+<kbd>![](Imagenes/fase3inicio.PNG)</kbd>
+
+**Registrar usuario**
+<kbd>![](Imagenes/fase3registro.PNG)</kbd>
+
+**Usuario guardado**
+<kbd>![](Imagenes/fase3usuarioguardado.PNG)</kbd>
+
+**Iniciar sesión**
+<kbd>![](Imagenes/fase3iniciosesion.PNG)</kbd>
+
+**Tablón de anuncios**
+<kbd>![](Imagenes/fase3tablon.PNG)</kbd>
+  
+**Publicar anuncio**
+<kbd>![](Imagenes/fase3publicaranuncio.PNG)</kbd>
+  
+**Publicar anuncio**
+<kbd>![](Imagenes/fase3publicaranuncio.PNG)</kbd>
+
+**Ver anuncio individual**
+<kbd>![](Imagenes/fase3veranunciouser.PNG)</kbd>
+  
+**Ver anuncio como Admin**
+<kbd>![](Imagenes/fase3veranuncioadmin.PNG)</kbd>
+
+**Perfil usuario**
+<kbd>![](Imagenes/fase3perfilusuariousuario.PNG)</kbd>
+
+**Perfil usuario como Admin**
+<kbd>![](Imagenes/fase3perfilusuarioadmin.PNG)</kbd>
+
+**Editar usuario (solo Admin)**
+<kbd>![](Imagenes/fase3editarusuario.PNG)</kbd>
+
+**Borrar usuario (solo Admin)**
+<kbd>![](Imagenes/fase3borrarusuario.PNG)</kbd>
+  
+**Enviar un mensaje a usuario**
+<kbd>![](Imagenes/fase3enviarmensaje.PNG)</kbd>
+  
+**Bandeja de mensajes**
+<kbd>![](Imagenes/fase3bandejaentrada.PNG)</kbd>
+
+## Capturas de pantalla Fase 2
 
 
 **Inicio**
