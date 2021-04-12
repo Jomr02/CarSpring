@@ -2,6 +2,7 @@ package es.urjc.etsii.dad.CarSpring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -26,11 +27,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/logout").permitAll();
 		http.authorizeRequests().antMatchers("/register").permitAll();
 		http.authorizeRequests().antMatchers("/registerOK").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.POST,"/anuncio/nuevo").permitAll();
+		
 		
 		///// PAGINAS TRAS AUTENTICACION
 		http.authorizeRequests().antMatchers("/borrar_anuncio/{id}").hasAnyRole("ADMIN");
 //		http.authorizeRequests().antMatchers("/usuario/{userId}/guardar").hasAnyRole("ADMIN");
 		http.authorizeRequests().anyRequest().authenticated();
+
 		
 		
 		///// FORMULARIO DE LOGIN
@@ -55,9 +59,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		//Autenticacion de usuarios en base de datos
 		auth.authenticationProvider(authenticationProvider);
 		
-		//PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 		//auth.inMemoryAuthentication().withUser("User").password(encoder.encode("pass")).roles("USER");
-		//auth.inMemoryAuthentication().withUser("Admin").password(encoder.encode("admin")).roles("USER", "ADMIN");
+		auth.inMemoryAuthentication().withUser("admin").password(encoder.encode("admin")).roles("USER", "ADMIN");
 	}
 
 }

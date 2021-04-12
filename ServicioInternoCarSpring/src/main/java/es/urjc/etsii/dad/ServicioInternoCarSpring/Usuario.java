@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import es.urjc.etsii.dad.CarSpring.*;
+
 
 @Entity
 public class Usuario {

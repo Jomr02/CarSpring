@@ -3,6 +3,7 @@ package es.urjc.etsii.dad.ServicioInternoCarSpring;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class ServicioInternoCarSpringApplication {
 

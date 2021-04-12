@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+
 @Configuration
 public class CSRFHandlerConfiguration implements WebMvcConfigurer {
 
@@ -30,3 +31,4 @@ class CSRFHandlerInterceptor extends HandlerInterceptorAdapter {
     	modelAndView.addObject("token", token.getToken());    	
     }
 }
+
