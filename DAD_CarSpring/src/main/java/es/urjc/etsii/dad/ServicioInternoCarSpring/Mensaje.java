@@ -1,4 +1,4 @@
-package es.urjc.etsii.dad.CarSpring;
+package es.urjc.etsii.dad.ServicioInternoCarSpring;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,13 +13,12 @@ import javax.persistence.OneToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
-
 @Entity
 public class Mensaje {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-
+	
 	private String asunto;
 	private String cuerpo;
 	

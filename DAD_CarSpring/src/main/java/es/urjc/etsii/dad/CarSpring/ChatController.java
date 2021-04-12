@@ -27,7 +27,7 @@ public class ChatController {
 	
 	private RestTemplate restTemplate = new RestTemplate();
 	
-	private final String pedidos_url = "http://localhost:8443/mensaje/nuevo";
+	private final String pedidos_url = "http://localhost:8050/email/mensaje";
 
 	@GetMapping("/bandeja_entrada")
 	public String misMensajes(Model model, HttpServletRequest request) {
@@ -47,10 +47,10 @@ public class ChatController {
 		return "enviar_mensaje";
 	}
 	
-	@PostMapping("/mensaje/nuevo")
-	public String nuevoMensaje(Model model, @RequestParam String destinatario, @RequestParam String asunto, @RequestParam String cuerpo,  HttpServletRequest request) {
+	@PostMapping("/mensaje/{destinatarioid}/nuevo")
+	public String nuevoMensaje(Model model, @PathVariable long destinatarioid, @RequestParam String asunto, @RequestParam String cuerpo,  HttpServletRequest request) {
 		Usuario remitente = userRepo.findByNick(request.getUserPrincipal().getName());
-		Usuario dest = userRepo.findByNick(destinatario);
+		Usuario dest = userRepo.findById(destinatarioid).get();
 		Mensaje mensaje = new Mensaje(remitente, dest, asunto, cuerpo);
 		msgRepo.save(mensaje);
 		dest.addMensaje(mensaje);
@@ -58,7 +58,7 @@ public class ChatController {
 		
 		String url = pedidos_url;
 		HttpEntity<Mensaje> enviomensaje = new HttpEntity<>(mensaje);
-	    restTemplate.exchange(url, HttpMethod.POST, enviomensaje ,Void.class);
+	    restTemplate.exchange(url, HttpMethod.POST, enviomensaje, Void.class);
  
 		model.addAttribute("username", request.getUserPrincipal().getName());
 		return "mensaje_enviado";

@@ -1,5 +1,4 @@
-package es.urjc.etsii.dad.CarSpring;
-
+package es.urjc.etsii.dad.ServicioInternoCarSpring;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,13 +15,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-
-
+import es.urjc.etsii.dad.CarSpring.*;
 
 @Entity
 public class Usuario {
@@ -55,11 +50,11 @@ public class Usuario {
 	@JsonIgnore
 	@OneToMany(mappedBy="destinatario")
 	private List<Mensaje> mensajes;	
-/*	
+	
 	@JsonIgnore
 	@OneToMany(mappedBy="comprador")
 	private List<Pedido> historialPedidos; // Lista de pedidos comprados
-*/	
+	
 	
 
 	
@@ -69,7 +64,7 @@ public class Usuario {
 		this.email = email;
 		this.nick = nick;
 		//Encriptacion de la contraseña; ya no se puede desencriptar nunca
-		this.contrasena = new BCryptPasswordEncoder().encode(contrasena); 
+//		this.contrasena = new BCryptPasswordEncoder().encode(contrasena); 
 		this.biografia = bio;
 		
 		this.roles = new ArrayList<>(); 
@@ -77,7 +72,7 @@ public class Usuario {
 		
 		this.anuncios = new ArrayList<Anuncio>();
 		this.articulos = new ArrayList<Articulo>();
-//		this.historialPedidos = new ArrayList<Pedido>(); 
+		this.historialPedidos = new ArrayList<Pedido>(); 
 		this.mensajes = new ArrayList<Mensaje>();
 		
 		
@@ -87,13 +82,13 @@ public class Usuario {
 	public Usuario (String email, String nick, String contrasena, String bio, String ... roles) {
 		this.email = email;
 		this.nick = nick;
-		this.contrasena = new BCryptPasswordEncoder().encode(contrasena); 
+//		this.contrasena = new BCryptPasswordEncoder().encode(contrasena); 
 		this.biografia = bio;
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 		
 		this.anuncios = new ArrayList<Anuncio>();
 		this.articulos = new ArrayList<Articulo>();
-//		this.historialPedidos = new ArrayList<Pedido>(); 
+		this.historialPedidos = new ArrayList<Pedido>(); 
 		this.mensajes = new ArrayList<Mensaje>();
 	}
 
@@ -112,15 +107,15 @@ public class Usuario {
 	public void setNick(String nick) {
 		this.nick = nick;
 	}
-
+/*
 	public String getContrasena() {
 		return contrasena;
 	}
-
+/*
 	public void setContrasena(String contrasena) {
 		this.contrasena = new BCryptPasswordEncoder().encode(contrasena);
 	}
-
+*/
 	public String getBio() {
 		return biografia;
 	}
@@ -156,14 +151,15 @@ public class Usuario {
 	public void setArticulos(List<Articulo> articulos) {
 		this.articulos = articulos;
 	}
-/*	
+	
 	public List<Pedido> getHistPedidos() {
 		return this.historialPedidos;
 	}
+
 	public void addPedido(Pedido pedido) {
 		this.historialPedidos.add(pedido);
 	}
-*/
+
 	public void addAnuncio(Anuncio v1) {
 		v1.setAnunciante(this);
 		this.articulos.add(v1.getArticulo());
@@ -227,7 +223,8 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nick=" + nick + ", contrasena=" + contrasena + ", info_perfil=" + biografia
-				+ ", anuncios=" + anuncios + ", articulos=" + articulos + "]";
+				+ ", anuncios=" + anuncios + ", articulos=" + articulos + ", pedidos="
+				+ historialPedidos + "]";
 	}
 	
 
