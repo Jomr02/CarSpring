@@ -3,6 +3,7 @@ package es.urjc.etsii.dad.CarSpring;
 import java.util.List;
 import java.util.Optional;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,16 +30,25 @@ public class UsuarioController {
 	private ArticuloRepository artRepo;
 	
 	
+	public void init (HttpServletRequest request) {
+		request = null; //si no, "guarda" la sesion anterior,  SI NO FUNCIONA REINICIAR NAVEGADOR
+		
+	}
+	
 	@GetMapping("/")
 	public String inicio(Model model, HttpServletRequest request) {
 		Boolean loggedIn = false;
 		String username = "";
+		
+		//SI FALLO AQUI, REINICIAR NAVEGADOR
 		if (request.getUserPrincipal() != null) {
 			loggedIn = true;
 			username = userRepo.findByNick(request.getUserPrincipal().getName()).getNick();
-		}
+		}  
+		
+		
 		model.addAttribute("loggedIn", loggedIn);
-		model.addAttribute("username", username);
+		model.addAttribute("username", username); 
 		return "index";
 	}
 	
