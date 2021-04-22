@@ -1,18 +1,16 @@
 version: "3.7"
 services:
-
-
   web:
     build: .
     expose:
       - "8443"
     links:
       - db
+      - si
     networks:
       - red1
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db/miservidor
-
   db:
     networks:
       - red1
@@ -20,7 +18,6 @@ services:
       - MYSQL_ROOT_PASSWORD=1234
       - MYSQL_DATABASE=miservidor
     image: mysql:5.6
-
   web2:
     build: .
     expose:
@@ -29,9 +26,9 @@ services:
       - red1
     links:
       - db
+      - si
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db/miservidor
-
 
   lb:
       image: haproxy:2.1.4
@@ -46,8 +43,6 @@ services:
         - web
         - web2
       restart: unless-stopped
-
-
 networks:
     red1:
       driver: bridge
