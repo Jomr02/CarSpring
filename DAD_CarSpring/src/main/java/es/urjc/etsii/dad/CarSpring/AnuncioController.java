@@ -64,7 +64,7 @@ public class AnuncioController {
 		
 		//Comunicación por REST
 		RestTemplate rest = new RestTemplate();
-		String anuncios_link = "http://localhost:8050/email/anuncio";
+		String anuncios_link = "http://si:8050/email/anuncio";
 		HttpEntity<Anuncio> mailRequest= new HttpEntity<>(anuncio);
 	    rest.exchange(anuncios_link, HttpMethod.POST,mailRequest,Void.class);
 	    
