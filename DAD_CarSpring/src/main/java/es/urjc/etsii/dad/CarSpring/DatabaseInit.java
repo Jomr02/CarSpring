@@ -20,7 +20,6 @@ public class DatabaseInit {
 	@PostConstruct
 	public void init () {
 		userRepo.save(new Usuario("admin@gmail.com", "admin", "admin", "Administrador de la página web", "ROLE_USER", "ROLE_ADMIN"));
-
 		
 	}
 
