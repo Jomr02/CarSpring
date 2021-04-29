@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.cache.annotation.CacheEvict;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -52,7 +53,7 @@ public class AnuncioController {
 		return "nuevoAnuncio_form";
 	}
 	
-
+	@CacheEvict(cacheNames="anuncios", allEntries=true)
 	@PostMapping("/anuncio/nuevo")
 	public String nuevoAnuncio(Model model, @RequestParam String nombre, @RequestParam int precio, @RequestParam(required=false) String categoria, @RequestParam(defaultValue="0") int anoFabricacion, @RequestParam String comentario, HttpServletRequest request) {
 		Usuario usuarioActual = usRepo.findByNick(request.getUserPrincipal().getName());
@@ -64,7 +65,7 @@ public class AnuncioController {
 		
 		//Comunicación por REST
 		RestTemplate rest = new RestTemplate();
-		String anuncios_link = "http://si:8050/email/anuncio";
+		String anuncios_link = "http://lbsi/email/anuncio";
 		HttpEntity<Anuncio> mailRequest= new HttpEntity<>(anuncio);
 	    rest.exchange(anuncios_link, HttpMethod.POST,mailRequest,Void.class);
 	    

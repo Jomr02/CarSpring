@@ -96,6 +96,14 @@ public class Usuario {
 //		this.historialPedidos = new ArrayList<Pedido>(); 
 		this.mensajes = new ArrayList<Mensaje>();
 	}
+	
+	public List<Mensaje> getMensajes() {
+		return mensajes;
+	}
+
+	public void setMensajes(List<Mensaje> mensajes) {
+		this.mensajes = mensajes;
+	}
 
 	public String getEmail() {
 		return email;
