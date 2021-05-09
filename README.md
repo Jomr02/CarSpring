@@ -22,7 +22,7 @@ Plataforma de compra-venta de vehiculos
 - Publicar un anuncio de venta.
 
 ## Video CarSpring
-[![CarSpring](https://www.youtube.com/watch?v=0stK0qlXcdw/0.jpg)](https://www.youtube.com/watch?v=0stK0qlXcdw "CarSpring")
+[![CarSpring](https://img.icons8.com/ios/452/youtube-play--v1.png)](https://www.youtube.com/watch?v=0stK0qlXcdw "CarSpring")
 
 ## Diagrama Dockers
 <kbd>![](Imagenes/DiagramaDocker.png)</kbd>
